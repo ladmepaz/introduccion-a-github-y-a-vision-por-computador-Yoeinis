@@ -44,16 +44,16 @@ def obtener_info_imagen(img):
     # Obtener el número de canales
     modo = img.mode
     if modo == 'L':  # Escala de grises
-        num_canales = None # Ingresa valor aquí
+        num_canales = 1 # Ingresa valor aquí
     elif modo == 'RGB':  # Imagen RGB
-        num_canales = None # Ingresa valor aquí
+        num_canales = 3 # Ingresa valor aquí
     elif modo == 'RGBA':  # Imagen RGBA
-        num_canales = None # Ingresa valor aquí
+        num_canales = 4 # Ingresa valor aquí
     else:
         num_canales = len(modo)  # Otros modos de imagen
     
     # Obtener las dimensiones de la imagen
-    dimensiones = None  # Ingresa valor aquí para obtener (ancho, alto)
+    dimensiones = img.size  # Ingresa valor aquí para obtener (ancho, alto)
     
     return num_canales, dimensiones
 
