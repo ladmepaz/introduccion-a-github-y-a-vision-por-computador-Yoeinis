@@ -21,9 +21,12 @@ def leer_imagen(ruta_imagen):
     img: objeto tipo Image de PIL
     """
     # Abrir la imagen
-    img = None # Insertar código aquí
+    img = Image.open(ruta_imagen) # Insertar código aquí
         
     return img
+
+img=leer_imagen("data\imagen0.png")
+img.show()
 
 def obtener_info_imagen(img):
     """
@@ -115,7 +118,7 @@ def estadisticas_por_canal(arreglo_img):
         resultados = {}
         num_canales = arreglo_img.shape[2]
         
-        for canal in None # Insertar código aquí
+        for canal in None: # Insertar código aquí
             promedio = np.mean(arreglo_img[:, :, canal])
             desviacion_estandar = np.std(arreglo_img[:, :, canal])
             resultados[f'Canal_{canal+1}'] = {
