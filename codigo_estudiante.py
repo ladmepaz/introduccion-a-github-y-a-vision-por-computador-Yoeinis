@@ -68,7 +68,7 @@ def imagen_a_arreglo(img):
     np.ndarray: Arreglo de NumPy con los datos de la imagen.
     """
     # Convertir la imagen a un arreglo de NumPy
-    arreglo = None # Insertar código aquí
+    arreglo = np.array(img) # Insertar código aquí
     return arreglo
 
 def estadisticas_intensidad(arreglo_img):
@@ -83,8 +83,8 @@ def estadisticas_intensidad(arreglo_img):
     tuple: (promedio, desviación_estándar) de las intensidades de los píxeles.
     """
     # Calcular el promedio y la desviación estándar
-    promedio = None # Insertar código aquí
-    desviacion_estandar = None # Insertar código aquí
+    promedio = arreglo_img.mean() # Insertar código aquí
+    desviacion_estandar = arreglo_img.std() # Insertar código aquí
     
     return promedio, desviacion_estandar
 
@@ -105,8 +105,8 @@ def estadisticas_por_canal(arreglo_img):
     # Verificar el número de dimensiones del arreglo
     if len(arreglo_img.shape) == 2:
         # Imagen de un solo canal
-        promedio = None # Insertar código aquí
-        desviacion_estandar = None # Insertar código aquí
+        promedio = arreglo_img.mean() # Insertar código aquí
+        desviacion_estandar = arreglo_img.std() # Insertar código aquí
         resultados = {
             'Canal_1': {
                 'Promedio': promedio,
@@ -118,7 +118,7 @@ def estadisticas_por_canal(arreglo_img):
         resultados = {}
         num_canales = arreglo_img.shape[2]
         
-        for canal in None: # Insertar código aquí
+        for canal in range(num_canales): # Insertar código aquí
             promedio = np.mean(arreglo_img[:, :, canal])
             desviacion_estandar = np.std(arreglo_img[:, :, canal])
             resultados[f'Canal_{canal+1}'] = {
