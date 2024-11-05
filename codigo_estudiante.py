@@ -25,7 +25,7 @@ def leer_imagen(ruta_imagen):
         
     return img
 
-img=leer_imagen("data\imagen0.png")
+img=leer_imagen("data/imagen0.png")
 img.show()
 
 def obtener_info_imagen(img):
